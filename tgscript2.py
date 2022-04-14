@@ -79,7 +79,7 @@ while cool < 0:
 	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 print(Fore.GREEN + Style.BRIGHT + "Готово! Скрипт запущен.")
-print(Fore.WHITE + Style.RESET_ALL + "Напишите в любой чат телеграмма -help (В закрытых чатах команда не работает)")
+print(Fore.WHITE + Style.RESET_ALL + "Напишите в любой чат телеграмма -help \n(В закрытых чатах команда не работает)")
 
 
 @app.on_message(filters.command("gifspam", prefixes=".") & filters.me)
@@ -3901,7 +3901,7 @@ def betaloves(_, msg):
 	msg.edit('''
 		<b>[!] Скрипт был остановлен командой .stop!\nДля перезапуска введите в термукс команду -\n`cd tgscript && python tgscript.py`\n\nАвтор скрипта: @tgscriptss</b>''')
 	sleep(1)
-	print(Fore.RED + "Скрипт остоновлен командой .stop!\nДля перезапуска введите команду 'cd tgscript && python tgscript.py'\n")
+	print(Fore.RED + "Скрипт остоновлен командой .stop!\nДля перезапуска нажмите CTRL + Z и введите 'python tgscript.py'\n")
 	quit()
 
 @app.on_message(filters.command("magic", prefixes=".") & filters.me)
