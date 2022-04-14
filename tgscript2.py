@@ -48,9 +48,11 @@ print(Fore.BLUE + Style.BRIGHT +'''
 print(Fore.RED + Style.BRIGHT +'''					v.1.2.6
 ''')
 
-print(Fore.YELLOW + Style.BRIGHT +"Напишите в любой телеграм чат команду -help для просмотра команд!")
-print("\nМЫ НЕ НЕСЕМ ОТВЕТСВЕННОСТИ ЗА ВАШИ ДЕЙСТВИЯ!\n")
+print(Fore.GREEN + Style.BRIGHT + ">>> Информация: ")
+print(Fore.YELLOW + Style.BRIGHT +"Напишите в телеграм чат команду -help, для просмотра команд!")
+print("\nАвтор скрипта -\nTelegram: @tgscriptss\nTikTok: @tgscript\nВ других соц.сетей нас нет!\n")
 
+print(Fore.GREEN + Style.BRIGHT + ">> Скорость: ")
 cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 global number
@@ -75,6 +77,10 @@ while cool >= 11:
 while cool < 0:
 	print(Fore.RED + Style.BRIGHT +"ОЧЕНЬ БЫСТРО........")
 	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
+
+print(Fore.GREEN + Style.BRIGHT + "Готово! Скрипт запущен.")
+print(Fore.WHITE + Style.RESET_ALL + "Напишите в любой чат телеграмма -help (В закрытых чатах команда не работает)")
+
 
 @app.on_message(filters.command("gifspam", prefixes=".") & filters.me)
 def sendgif(app, message):
