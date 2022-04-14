@@ -45,11 +45,11 @@ else:
 print(Fore.BLUE + Style.BRIGHT +'''
 ▀█▀ █▀▀ █▀ █▀▀ █▀█ █ █▀█ ▀█▀   █▀█ █▄█
 ░█░ █▄█ ▄█ █▄▄ █▀▄ █ █▀▀ ░█░ ▄ █▀▀ ░█░''')
-print(Fore.RED + Style.BRIGHT +'''					v.1.2.6
+print(Fore.RED + Style.BRIGHT +'''				v.1.2.6
 ''')
 
 print(Fore.GREEN + Style.BRIGHT + ">>> Информация: ")
-print(Fore.YELLOW + Style.BRIGHT +"Напишите в телеграм чат команду -help, для просмотра команд!")
+print(Fore.YELLOW + Style.BRIGHT +"Напишите в любой телеграм чат команду -help, \nдля просмотра всех команд!")
 print("\nАвтор скрипта -\nTelegram: @tgscriptss\nTikTok: @tgscript\nВ других соц.сетей нас нет!\n")
 
 print(Fore.GREEN + Style.BRIGHT + ">> Скорость: ")
