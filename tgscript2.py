@@ -18,6 +18,11 @@ from colorama import Fore, Back, Style
 
 app = Client('admin', api_id=15897262, api_hash='90476d9c65a86b03837e1e249314cd75')
 
+if os.sys.platform == "win32":
+	os.system("cls")
+else:
+	os.system("clear")
+
 colorama.init()
 print(Fore.GREEN + Style.BRIGHT + ">>> Руководство по авторизации в скрипте @tgscriptss")
 print("")
@@ -26,6 +31,7 @@ print(Fore.WHITE + Style.RESET_ALL + "1. Вводите свой номер те
 print("2. Ввод Y для подтверждения номера")
 print("3. Вводите код который придёт в телеграме")
 print("4. Пароль от двухэтапной авторизации (если он есть) ")
+print("(Если вы авторизовывались то просто подождите)")
 print(Fore.YELLOW + "")
 
 app.start()
@@ -38,37 +44,37 @@ else:
 
 print(Fore.BLUE + Style.BRIGHT +'''
 ▀█▀ █▀▀ █▀ █▀▀ █▀█ █ █▀█ ▀█▀   █▀█ █▄█
-░█░ █▄█ ▄█ █▄▄ █▀▄ █ █▀▀ ░█░ ▄ █▀▀ ░█░
-					v.1.2.5
+░█░ █▄█ ▄█ █▄▄ █▀▄ █ █▀▀ ░█░ ▄ █▀▀ ░█░''')
+print(Fore.RED + Style.BRIGHT +'''					v.1.2.6
 ''')
 
-print(Fore.YELLOW + "Напишите в любой телеграм чат команду -help для просмотра команд!")
+print(Fore.YELLOW + Style.BRIGHT +"Напишите в любой телеграм чат команду -help для просмотра команд!")
 print("\nМЫ НЕ НЕСЕМ ОТВЕТСВЕННОСТИ ЗА ВАШИ ДЕЙСТВИЯ!\n")
 
-cool = int(input("Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 global number
 number = 0
 
 while cool == 0:
 	print(Fore.RED + Style.BRIGHT +"Слишком быстро!")
-	cool = int(input(Fore.YELLOW + Style.BRIGHT +"Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 while cool == 1:
 	print(Fore.RED + Style.BRIGHT +"Слишком быстро!")
-	cool = int(input(Fore.YELLOW + Style.BRIGHT +"Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 while cool == 2:
 	print(Fore.RED + Style.BRIGHT +"Слишком быстро!")
-	cool = int(input(Fore.YELLOW + Style.BRIGHT +"Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
-while cool > 10:
+while cool >= 11:
 	print(Fore.RED + Style.BRIGHT +"Слишком медленно!")
-	cool = int(input(Fore.YELLOW + Style.BRIGHT +"Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 while cool < 0:
 	print(Fore.RED + Style.BRIGHT +"ОЧЕНЬ БЫСТРО........")
-	cool = int(input(Fore.YELLOW + Style.BRIGHT +"Введите завис.число - от него будет зависеть скорость (Норма 8):  "))
+	cool = int(input(Fore.WHITE + Style.RESET_ALL + "<*> Введите скорость от 3 до 10 (Норма 8): "))
 
 @app.on_message(filters.command("gifspam", prefixes=".") & filters.me)
 def sendgif(app, message):
@@ -3883,6 +3889,14 @@ def betaloves(_, msg):
 	sleep(5)
 	global number
 	number = number + 1
+
+@app.on_message(filters.command("stop", prefixes=".") & filters.me)
+def betaloves(_, msg):
+	msg.edit('''
+		<b>[!] Скрипт был остановлен командой .stop!\nДля перезапуска введите в термукс команду -\n`cd tgscript && python tgscript.py`\n\nАвтор скрипта: @tgscriptss</b>''')
+	sleep(1)
+	print(Fore.RED + "Скрипт остоновлен командой .stop!\nДля перезапуска введите команду 'cd tgscript && python tgscript.py'\n")
+	quit()
 
 @app.on_message(filters.command("magic", prefixes=".") & filters.me)
 def betaloves(_, msg):
